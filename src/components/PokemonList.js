@@ -15,13 +15,14 @@ export default function PokemonList({pokeSearch}) {
 
   return (
     <>
-      {pokemon.filter((val) => {
-        if (pokeSearch === ""){
-          return val
-        } else if(val.name.toLowerCase().includes(pokeSearch.toLowerCase())){
-          return val
-        }
-      }).map(({ name, id }) => (
+      {pokemon
+        .filter((val) => {
+          if (pokeSearch === "") {
+            return val;
+          } else if (val.name.toLowerCase().includes(pokeSearch.toLowerCase())) {
+            return val;
+          }
+        }).map(({ name, id }) => (
         <View style={styles.cardContainer} key={id}>
           <Text styles={styles.cardTitle}>{name}</Text>
           <Button
