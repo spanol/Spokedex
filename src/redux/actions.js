@@ -21,10 +21,10 @@ export const getPokemons = (url) => {
 };
 
 export const getPokemonData = (id) => {
-  const url = `https://pokeapi.co/api/v2/pokemon/`;
+  const url = `https://pokeapi.co/api/v2/pokemon/${id}`;
   try {
     return async (dispatch) => {
-      const result = await fetch(url + id);
+      const result = await fetch(url);
       const resp = await result.json();
       if (resp) {
         dispatch({

@@ -5,6 +5,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { getPokemons, getPokemonData } from "../redux/actions";
 import { Header } from "../components/Header";
 import PokemonList from "../components/PokemonList";
+import { styles } from "../styles/styles";
 
 export default function Home() {
   const [pokeSearch, setPokeSearch] = useState("");
@@ -20,7 +21,7 @@ export default function Home() {
   }, []);
 
   return (
-    <SafeAreaView>
+    <SafeAreaView style={styles.appBackground}>
       <Header pokeSearch={pokeSearch} setPokeSearch={setPokeSearch} />
       <PokemonList pokeSearch={pokeSearch} />
     </SafeAreaView>
